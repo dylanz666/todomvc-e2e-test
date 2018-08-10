@@ -1,0 +1,25 @@
+{
+  "name": "todomvc-e2e-test",
+  "version": "1.0.0",
+  "description": "todomvc-e2e-test",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run selenium-install && npm run selenium-start",
+    "selenium-install": "node node_modules/selenium-standalone/bin/selenium-standalone install",
+    "selenium-start": "selenium-standalone start",
+    "test": "mocha ./test/spec/*/*.js --reporter mochawesome-screenshots --reporter-options jsonReport=true,clearOldScreenshots=true,shortScrFileNames=true --timeout=60000",
+    "parallel": "mocha-parallel-tests ./test/spec/*/*.js --reporter mochawesome-screenshots --reporter-options jsonReport=true,clearOldScreenshots=true,shortScrFileNames=true,multiReport=true --timeout=60000"
+  },
+  "author": "Dylan",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "log4js": "^2.11.0",
+    "mocha": "^5.2.0",
+    "mocha-parallel-tests": "^2.0.4",
+    "mochawesome-screenshots": "^1.5.9",
+    "selenium-standalone": "^6.15.1",
+    "supertest": "^3.1.0",
+    "webdriverio": "^4.13.1"
+  }
+}

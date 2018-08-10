@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+.idea/
+logs/
+mochawesome-reports/
+node_modules/
+browserFactory/

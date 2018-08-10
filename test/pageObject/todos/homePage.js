@@ -37,9 +37,9 @@ class homePage {
 
     async completeExistedToDoItem(todoItemAttrName, todoItemAttrValue, expectedIncompleteQuantity) {
         await I.click(toggle_checkbox);
-        let isClassCorrect = await I.getAttribute(fistToDoItem_li, todoItemAttrName);
+        let firstToDoClass = await I.getAttribute(fistToDoItem_li, todoItemAttrName);
         let incompleteQuantity = await I.getText(leftToDoItems_strong);
-        return isClassCorrect === todoItemAttrValue && parseInt(incompleteQuantity) === expectedIncompleteQuantity;
+        return firstToDoClass === todoItemAttrValue && parseInt(incompleteQuantity) === expectedIncompleteQuantity;
     }
 }
 

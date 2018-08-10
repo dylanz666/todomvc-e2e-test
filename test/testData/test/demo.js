@@ -5,6 +5,6 @@ exports.demo = {
     completed_true: true,
     completed_false: false,
     todoItemAttrName: "class",
-    todoItemAttrValue: "complete",
+    todoItemAttrValue: "completed",
     expectedIncompleteQuantity: 0
 };

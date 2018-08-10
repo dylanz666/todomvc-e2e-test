@@ -13,14 +13,14 @@ describe('Test todos', function (data = {}) {
         assert.equal(quantity, 1);
     });
     it("2.Delete a existed todo item should pass", async function () {
-        await page.homePage.addNewToDoItemBySetLocalStorage(data.todoId, data.todoTitle, data.completed_true);
+        await page.homePage.addNewToDoItemBySetLocalStorage(data.todoId, data.todoTitle, data.completed_false);
         let isQuantityTextShowed = await page.homePage.deleteExistedToDoItem();
         assert.equal(isQuantityTextShowed, false);
     });
     it("3.Complete a existed todo item should pass", async function () {
-        await page.homePage.addNewToDoItemBySetLocalStorage(data.todoId, data.todoTitle, data.completed_true);
+        await page.homePage.addNewToDoItemBySetLocalStorage(data.todoId, data.todoTitle, data.completed_false);
         let testResult = await page.homePage.completeExistedToDoItem(data.todoItemAttrName, data.todoItemAttrValue, data.expectedIncompleteQuantity);
-        assert.equal(testResult, false);
+        assert.equal(testResult, true);
     });
 
     afterEach(async function () {
